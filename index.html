@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phonk Player</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .player {
+      text-align: center;
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #000;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #666;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    li:hover {
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="player">
+    <h1>🎵 PHONK Плеер</h1>
+    <audio id="audio" controls></audio>
+
+    <div class="controls">
+      <button id="play">▶️ Play</button>
+      <button id="pause">⏸️ Pause</button>
+    </div>
+
+    <div class="playlist">
+      <h3>🎶 Плейлист:</h3>
+      <ul>
+        <li onclick="playSong('KSLV Noh - dynamic.mp3')">🔥 KSLV Noh – Dagger</li>
+        <li onclick="playSong('DVRST - Close Eyes.mp3')">🚗 DVRST – Close Eyes</li>
+        <li onclick="playSong('INTERWORLD - METAMORPHOSIS.mp3')">💀 INTERWORLD – Metamorphosis</li>
+        <li onclick="playSong('MoonDeity - NEON BLADE.mp3')">🕶️ MoonDeity – NEON BLADE</li>
+        <li onclick="playSong('strongman-speed-up-brazill-phonk-gym-phonk-2025-279762.mp3')">😈 PlayaPhonk – PHONK ME</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('play');
+    const pauseBtn = document.getElementById('pause');
+
+    playBtn.onclick = () => audio.play();
+    pauseBtn.onclick = () => audio.pause();
+
+    function playSong(src) {
+      audio.src = src;
+      audio.play();
+    }
+  </script>
+</body>
+</html>
